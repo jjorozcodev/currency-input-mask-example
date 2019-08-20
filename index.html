@@ -16,10 +16,10 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <script src="inputmask.js"></script>
-    <script src="jquery.inputmask.js"></script>
-    <script src="autoNumeric.js"></script>
-    <script src="form-mask.js"></script>
+    <script src="js/inputmask.js"></script>
+    <script src="js/jquery.inputmask.js"></script>
+    <script src="js/autoNumeric.js"></script>
+    <script src="js/form-mask.js"></script>
 </head>
 
 <body>
@@ -34,10 +34,28 @@
                 <label class="col-form-label">Dollar (U$)</label>
             </div>
             <div class="col-sm-9">
-                <input id="numero" type="text" placeholder="$" class="form-control autonumber" data-a-sign="$ ">
+                <input id="number" onkeyup="catchValue()" type="text" placeholder="$" class="form-control autonumber"
+                    data-a-sign="$ ">
             </div>
         </div>
+        <div class="row form-group">
+            <div class="col-sm-3">
+                <label class="col-form-label">Value Entered:</label>
+            </div>
+            <div class="col-sm-9">
+                <span class="align-middle">
+                    <mark id="result" class="align-middle">Nothing yet...</mark>
+                </span>
+            </div>
+        </div>
+
     </div>
+
+    <script>
+        function catchValue() {
+            $('#result').html($('#number').val());
+        }
+    </script>
 </body>
 
 </html>
